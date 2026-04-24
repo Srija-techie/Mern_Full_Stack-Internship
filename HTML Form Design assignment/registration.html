@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        form{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 200vh;
+            width: 100vw;
+            background-image: url(https://img.freepik.com/free-vector/abstract-organic-pattern-design-background_1048-19286.jpg?semt=ais_hybrid&w=740&q=80);
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        fieldset{
+            border: none;
+            backdrop-filter: blur(2px);
+            margin: 10px;
+            padding: 15px;
+            border-radius: 25px;
+            box-shadow: 10px 10px 5px burlywood;
+        }
+        label{
+            color: brown;
+            font-size: larger;
+            font-family: monospace;
+            font-style: italic;
+            font-weight: bolder;
+        }
+        button{
+            padding: 5px;
+            background-color: burlywood;
+            font-weight: bold;
+            font-style: italic;
+            font-family: monospace;
+            border-radius: 10px;
+        }
+        h2{
+            text-align: center;
+            color:rgba(187, 117, 25, 0.684);
+            background-image: linear-gradient(goldenrod,lavenderblush);
+            background-clip: text;
+            font-size: 50px;
+        }
+    </style>
+</head>
+<body>
+    <form  action="" method="post">
+        <fieldset>
+           <legend align="center"><h2>User Registration Form</h2></legend>
+             <label for="fname">Full Name:</label>
+             <input type="text" id="fname" required placeholder="Enter your name" minlength="3" maxlength="10">
+             <br><br>
+             <label for="email">Email:</label>
+             <input type="email" id="email" required placeholder="Enter your email">
+             <br><br>
+             <label for="pwd">Password:</label>
+             <input type="password" id="pwd" required name="Password" placeholder="Enter Password" minlength="5" maxlength="7">
+             <br><br>
+             <label for="confirm">Confirm Password: </label>
+             <input type="password" id="confirm" required placeholder="Re-enter your password">
+             <br><br>
+             <label for="">Gender:</label>
+             <input type="radio" name="Male">Male
+             <input type="radio" name="Female">Female
+             <input type="radio" name="Others">Others
+             <br><br>
+             <label for="hobby">Hobbies:</label><br>
+             <input type="checkbox" name="Writing"> Writing<br>
+             <input type="checkbox" name="Blogging"> Blogging<br>
+             <input type="checkbox" name="Coding"> Coding<br>
+             <input type="checkbox" name="Content Creation"> Content Creation <br>
+             <input type="checkbox" name="Gym"> Gym <br>
+             <br><br>
+             <label for="dob">Date of Birth</label>
+             <input type="date" id="dob">
+             <br><br>
+             <button type="submit">submit</button>
+             <button type="cancel">cancel</button>
+            </fieldset>
+        </form>
+        <script>
+            const form = document.querySelector('form');
+
+form.addEventListener('submit', (e) => {
+    const pass = document.getElementById('pwd').value;
+    const conf = document.getElementById('confirm').value;
+
+    if (pass !== conf) {
+        e.preventDefault(); // Stops the form from submitting
+        alert("Passwords do not match! Please try again.");
+    }
+});
+        </script>
+</body>
+</html>

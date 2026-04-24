@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Worth Watch Movies</title>
+
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        header {
+            padding: 10px;
+            display: flex;
+            justify-content: space-between;
+            background-image: linear-gradient(rgb(244, 83, 166), rgb(236, 133, 78), rgb(233, 233, 101));
+        }
+
+        header > div {
+            display: flex;
+            align-items: center;
+        }
+
+        header img {
+            height: 60px;
+            width: 60px;
+            border-radius: 50%;
+        }
+
+        header h2{
+            margin-left: 15px;
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+            color: white;
+        }
+
+        header ol {
+            display: flex;
+            width: 500px;
+            justify-content: space-evenly;
+            align-items: center;
+            list-style: none;
+        }
+
+        li > a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        main{
+            background-image: radial-gradient(rgb(176, 105, 239), rgb(203, 119, 222));
+            min-height: 100vh;
+        }
+
+        main h1{
+            margin: 30px;
+            color: rgb(45, 40, 190);
+            text-align: center;
+            text-shadow: 5px 5px 5px rgb(247, 0, 255);
+            font-style: italic;
+            padding: 20px;
+        }
+
+        main h1::first-letter {
+            font-size: 50px;
+        }
+
+        section {
+            padding: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+            gap: 20px;
+        }
+
+        section > div {
+            width: 200px;
+            border-radius: 20px;
+            padding: 15px;
+            text-align: center;
+            background-image: linear-gradient(rgb(41, 8, 116), rgb(203, 222, 58));
+            color: white;
+            box-shadow: 5px 5px 15px rgba(0,0,0,0.3);
+            transition: transform 0.3s;
+        }
+
+        section > div:hover {
+            transform: scale(1.05);
+        }
+
+        section img {
+            border-radius: 50%;
+            height: 150px;
+            width: 150px;
+        }
+
+        button {
+            margin: 5px;
+            padding: 5px 10px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: black;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div>
+           
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRMP5Z0p6B8R_ZJokWyiGH_z1b0FErD8hrISQ&s">
+            <h2>Movies</h2>
+        </div>
+
+        <nav>
+            <ol>
+                <li><a href=""> <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-house" viewBox="0 0 16 16">
+  <path d="M8.707 1.5a1 1 0 0 0-1.414 0L.646 8.146a.5.5 0 0 0 .708.708L2 8.207V13.5A1.5 1.5 0 0 0 3.5 15h9a1.5 1.5 0 0 0 1.5-1.5V8.207l.646.647a.5.5 0 0 0 .708-.708L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293zM13 7.207V13.5a.5.5 0 0 1-.5.5h-9a.5.5 0 0 1-.5-.5V7.207l5-5z"/>
+</svg>  Home</a></li>
+                <li><a href=""><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box-arrow-in-right" viewBox="0 0 16 16">
+  <path fill-rule="evenodd" d="M6 3.5a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-2a.5.5 0 0 0-1 0v2A1.5 1.5 0 0 0 6.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2h-8A1.5 1.5 0 0 0 5 3.5v2a.5.5 0 0 0 1 0z"/>
+  <path fill-rule="evenodd" d="M11.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H1.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708z"/>
+</svg>  Login</a></li>
+                <li><a href=""><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-menu-button-fill" viewBox="0 0 16 16">
+  <path d="M1.5 0A1.5 1.5 0 0 0 0 1.5v2A1.5 1.5 0 0 0 1.5 5h8A1.5 1.5 0 0 0 11 3.5v-2A1.5 1.5 0 0 0 9.5 0zm5.927 2.427A.25.25 0 0 1 7.604 2h.792a.25.25 0 0 1 .177.427l-.396.396a.25.25 0 0 1-.354 0zM0 8a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm1 3v2a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2zm14-1V8a1 1 0 0 0-1-1H2a1 1 0 0 0-1 1v2zM2 8.5a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5m0 4a.5.5 0 0 1 .5-.5h6a.5.5 0 0 1 0 1h-6a.5.5 0 0 1-.5-.5"/>
+</svg></a> Register</a></li>
+                <li><a href=""><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-lines-fill" viewBox="0 0 16 16">
+  <path d="M6 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6m-5 6s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zM11 3.5a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 0 1h-4a.5.5 0 0 1-.5-.5m.5 2.5a.5.5 0 0 0 0 1h4a.5.5 0 0 0 0-1zm2 3a.5.5 0 0 0 0 1h2a.5.5 0 0 0 0-1zm0 3a.5.5 0 0 0 0 1h2a.5.5 0 0 0 0-1z"/>
+</svg>  Contact</a></li>
+            </ol>
+
+        </nav>
+    </header>
+
+    <main>
+        <h1>Welcome to my Page</h1>
+
+        <section>
+
+            <div>
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRYmku_2G5rfuRW2o2WjOlXkkUJsCyNLxWyHA&s">
+                <h4>Name: Rapunzel</h4>
+                <h4>Movie: Tangled</h4>
+                <h4>Rating: ⭐⭐⭐⭐</h4>
+                <button>Read More</button>
+                <button>Watch Trailer</button>
+            </div>
+
+            
+            <div>
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQRzrPKvNW87_zBaGOCs-AeDoX_KHNWBykQ9Q&s">
+                <h4>Name: Cinderella</h4>
+                <h4>Movie: Cinderella</h4>
+                <h4>Rating: ⭐⭐⭐⭐</h4>
+                <button>Read More</button>
+                <button>Watch Trailer</button>
+            </div>
+
+           
+            <div>
+                <img src="https://preview.redd.it/to-me-belle-is-the-prettiest-disney-princess-v0-av307gktktme1.jpeg?width=640&crop=smart&auto=webp&s=b7bf3a1d623cd08d51576f4e104736125fe42fc4">
+                <h4>Name: Belle</h4>
+                <h4>Movie: Beauty and the Beast</h4>
+                <h4>Rating: ⭐⭐⭐⭐</h4>
+                <button>Read More</button>
+                <button>Watch Trailer</button>
+            </div>
+
+           
+            <div>
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRIXL2xwl49tljKzyqtw_RCIvZiexzDo3f35g&s">
+                <h4>Name: Elsa</h4>
+                <h4>Movie: Frozen</h4>
+                <h4>Rating: ⭐⭐⭐⭐</h4>
+                <button>Read More</button>
+                <button>Watch Trailer</button>
+            </div>
+
+            
+            <div>
+                <img src="https://www.shutterstock.com/image-photo/disney-princess-ariel-600nw-2753160043.jpg">
+                <h4>Name: Ariel</h4>
+                <h4>Movie: The Little Mermaid</h4>
+                <h4>Rating: ⭐⭐⭐⭐</h4>
+                <button>Read More</button>
+                <button>Watch Trailer</button>
+            </div>
+
+        </section>
+    </main>
+
+    <footer style="text-align:center; padding:10px; background:black; color:white;">
+        © 2026 Disney Fan Page
+    </footer>
+
+</body>
+</html>
