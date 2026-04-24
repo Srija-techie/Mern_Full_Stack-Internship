@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SurveyForm</title>
+    <style>
+        form{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 200vh;
+            width: 100vw;
+            background-image: url(https://t3.ftcdn.net/jpg/04/33/72/40/360_F_433724006_Kv2UN9hyTvQRiU30z9tAXWJ3RoUz2WqC.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        h2{
+            text-align: center;
+            color: rgb(246, 164, 155);
+            background-color:darkgreen;
+            font-size: 35px;
+        }
+        fieldset{
+            border: none;
+            backdrop-filter: blur(1px);
+            margin: 20px;
+            padding: 30px;
+            border-radius: 10x 30px;
+            box-shadow: 10px 10px 5px rgb(150, 217, 203);
+        }
+        label{
+            color: darkgreen;
+            font-size: 20px;
+            font-family:'Gill Sans';
+            font-style: italic;
+            font-weight: bold;
+        }
+        button{
+            padding: 10px 10px;
+            background-color: rgb(13, 152, 13);
+            font-weight: bold;
+            font-style: italic;
+            font-family: 'Gill Sans';
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <form  action="" method="post">
+    <fieldset>
+        <legend align="center"><h2>Service Request Form</h2></legend>
+        <label for="name">Customer Name:</label>
+        <input type="text" id="name" required placeholder="Enter your Name"><br>
+        <br>
+        <label for="phno">Contact Number:</label>
+        <input type="tel" pattern="[6-9]{1}[0-9]{9}" id="phno" required placeholder="Enter contact number" maxlength="10" minlength="5"><br><br>
+        <label for="">Issue Type:</label>
+        <select><option value="bug">Bug / Error</option>
+            <option value="ui">UI / Design Issue</option>
+            <option value="performance">Performance Issue</option>
+            <option value="feature">Feature Request</option>
+            <option value="security">Security Issue</option>
+            <option value="compatibility">Compatibility Issue</option>
+            <option value="data">Data Issue</option>
+            <option value="network">Network / Connectivity</option>
+            <option value="account">Account / Login Issue</option>
+            <option value="other">Other</option>           
+        </select><br><br>
+        <label for="description">Description: </label>
+        <textarea id="description" name="description" rows="5" cols="40" placeholder="Describe the issue in detail"></textarea>
+        <br><br>
+        <label for="priority">Priority:</label>
+        <input type="range" id="priority" name="priority" min="1" max="3" step="1"><br><br>
+        <button type="submit">submit</button>
+</body>
+</html>
