@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attribute-selectors</title>
+    <style>
+        img[alt^='ima']{
+            height: 350px;
+            width:400px;
+            border-radius: 50px;
+        }
+        h1[id$='ag']{
+            color: darkseagreen;
+        }
+        h1[id|='heading']{
+            color:darkorange;
+            background-color:rgb(241, 237, 167);
+        }
+        h1[id*='t']{
+            color: crimson;
+        }
+    </style>
+</head>
+<body>
+   <h1 id="heading">headings</h1>
+   <h1 id="heading-tag">headings</h1>
+   <h1 id="heading tag">headings</h1>
+    <img src="https://img-cdn.publive.online/fit-in/1200x675/elle-india/media/post_attachments/wp-content/uploads/2024/11/medium-poster-movie-tangled-disney-hd-wallpaper-print-poster-on-original-imah39rgzfrfgtey.webp" alt="image1">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS0DOfHgoR-nVXme3WQBx0j3byvd_0r6Gummg&s" alt="image2">
+</body>
+</html>
