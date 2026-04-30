@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Register</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+    <div class="logo-title">
+        <img src="https://tse3.mm.bing.net/th/id/OIP.9UKh5CS0mZQ76SWBgcQlxgHaFb?pid=Api&P=0&h=180">
+        <h2>ABC Training Institute</h2>
+    </div>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="courses.html">Courses</a>
+        <a href="schedule.html">Schedule</a>
+        <a href="register.html" class="active">Register</a>
+    </nav>
+</header>
+<section class="register-section">
+
+    <h1>Student Registration</h1>
+    <br>
+    <hr>
+    <br>
+
+    <form>
+
+        <div class="form-row">
+        <label>Name:</label>
+        <input type="text" placeholder="Enter your name" required>
+    </div>
+
+    <div class="form-row">
+        <label>Email:</label>
+        <input type="email" placeholder="Enter your email" required>
+    </div>
+
+    <div class="form-row">
+        <label>Phone:</label>
+        <input type="tel" placeholder="Enter your phone number" required>
+    </div>
+
+    <div class="form-row">
+        <label>Course:</label>
+        <select required>
+            <option value="">Select Course</option>
+            <option>HTML & CSS</option>
+            <option>Java</option>
+            <option>React JS</option>
+        </select>
+    </div>
+
+    <div class="form-row">
+        <label>Gender:</label>
+        <div class="gender">
+            <label><input type="radio" name="g"> Male</label>
+            <label><input type="radio" name="g"> Female</label>
+        </div>
+    </div>
+
+    <div class="form-row">
+        <label>Message:</label>
+        <textarea placeholder="Enter your message"></textarea>
+    </div>
+
+        <button type="submit">Register Now</button>
+
+    </form>
+
+</section>
+
+</body>
+</html>
