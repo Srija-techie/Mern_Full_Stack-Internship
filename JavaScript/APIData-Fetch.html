@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img{
+            height:100px;
+            width: 100px;
+            border-radius: 10px;
+        }
+        div{
+            background-color:rgba(199, 21, 134, 0.74);
+            padding: 10px;
+            display: flex;
+            justify-content: space-around;
+            margin: 10px;
+        }
+        div:nth-child(odd){
+            background-color:rgba(165, 42, 42, 0.741);
+        }
+        ol{
+            list-style: none;
+        }
+        span{
+            font-weight: bold;
+            font-size: 19px;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        let apiUrl="https://api.github.com/users";
+        let body=document.querySelector("body")
+        fetch(apiUrl).then((res)=>res.json()).then((users)=>{
+            users.forEach((u)=>{
+                console.log(u.login,u.id);
+                let div=document.createElement("div"); 
+                let image=document.createElement("img"); 
+                let orderList=document.createElement("ol"); 
+                let li1=document.createElement("li"); 
+                let li2=document.createElement("li"); 
+                let li3=document.createElement("li"); 
+                div.appendChild(image)
+                div.appendChild(orderList)
+                orderList.appendChild(li1);
+                orderList.appendChild(li2);
+                orderList.appendChild(li3);
+                body.appendChild(div);
+
+                image.src=`${u.avatar_url}`
+
+
+
+                li1.innerText=`Username: $(u,login);`
+                li2.innerText=`<span>ID:</span> $(u,Id);`
+                li3.innerText=`<span>Profile Type</spam> $(u,user_view_type);`
+            })
+            // console.log(users)
+        }).catch((err)=>{
+            console.log("err");   
+        })
+    </script>
+</body>
+</html>

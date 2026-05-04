@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      tbody tr:nth-child(odd) {
+        background-color: rgb(249, 149, 182);
+      }
+      body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      input {
+        margin-bottom:40px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>EMP Details</h1>
+    <input type="search" placeholder="Search Employees" /><br /><br />
+    <table border="3" cellspacing="4" cellpadding="20">
+      <thead>
+        <tr bgcolor="powderblue">
+          <th>Name</th>
+          <th>Role</th>
+          <th>Salary</th>
+          <th>Address</th>
+          <th>Phone no</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>srija</td>
+          <td>software</td>
+          <td>40000</td>
+          <td>vizag</td>
+          <td>98765435678</td>
+        </tr>
+        <tr>
+          <td>keer</td>
+          <td>devloper</td>
+          <td>56000</td>
+          <td>banglore</td>
+          <td>5678986543</td>
+        </tr>
+        <tr>
+          <td>puri</td>
+          <td>govt.party</td>
+          <td>76543</td>
+          <td>hyderabad</td>
+          <td>34567890877</td>
+        </tr>
+      </tbody>
+    </table>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi eaque voluptates distinctio, sequi et nemo minima. Excepturi, accusamus velit. Incidunt explicabo iste dolores fuga soluta voluptates doloremque et hic natus!</p>
+    <button onclick="disappearParagraph()">Click Here</button>
+    <script>
+        function disappearParagraph(){
+            let para=document.querySelector("p");
+            para.style.display=(para.style.display=="block") ? "none" : "block"
+        }
+      let rows = document.querySelectorAll("tbody tr");
+      let input = document.querySelector("input");
+      input.addEventListener("keyup", () => {
+        let inputText = input.value.toLowerCase();
+        rows.forEach((row) => {
+          let rowData = row.textContent;
+          let result = rowData.toLowerCase().includes(inputText);
+          console.log(result);
+
+          row.style.display = result ? "" : "none";
+        });
+      });
+
+      // input.onkeyup=()=>{
+      //     console.log(input.value);
+      // }
+    </script>
+  </body>
+</html>

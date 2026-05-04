@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let obj={
+            Name:"Sruthi",
+            rollnumber:'uw0n23',
+            skills:['html','css','js'],
+            address:{
+                city:"vizag",
+                zipcode:567801
+            }
+        }
+        console.log(obj);
+
+        // const obj1=new Object({
+        //     username: "admin",
+        //     password: "admin@!23"
+        // })
+        // console.log(obj1);
+
+        console.log(obj);
+        console.log(obj.Name);
+        console.log(obj.address.city);
+        console.log(obj.skills[0]);
+
+        console.log(Object.keys(obj));
+        console.log(Object.values(obj));
+        console.log(Object.entries(obj));
+
+        // to add a field
+        obj.Name="sri";
+        obj.Course='B.Tech';
+        console.log(obj);
+        
+        // to delete a field
+        obj.Name="sri";
+        obj.Course='B.Tech';
+        delete obj.address;
+        console.log(obj);
+
+        // object.seal
+        Object.seal(obj)
+        console.log(Object.isSealed(obj));
+
+        // deleting after sealed
+        delete obj.name; //n
+        obj.rollnumber="uw0n26" //y
+        obj.age=25;//n
+        console.log(obj);
+
+        // freeze
+        Object.freeze(obj);
+        console.log(Object.isFrozen(obj));
+        obj.rollnumber="uw0n28"
+        obj.age=25; //n
+        console.log(obj);
+        
+        //windows object(BOM)
+        window.console.log("HELLO")
+        
+         
+        
+        
+    </script>
+</body>
+</html>

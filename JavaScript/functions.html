@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let userDetails= function(username,password){
+            // let ="sri@123";
+            // let ="v_2004";
+            // console.log(username);
+            // console.log(password);
+            console.log("This is functional expression");    
+            return username+" "+password
+            return "HELLO"
+        }
+        let result=userDetails('sri@123',"v_2004");
+        console.log(userDetails('v@2004',"Sri@06"));
+        console.log(result);
+
+        // named function
+        function employeeDetails(name , role , salary , address){
+            // console.log("This is Normal Function.");
+            // console.log("Name: ",name);
+            // console.log("Role: ",role);
+            // console.log("Salary: ",salary);
+            // console.log("Address: ",address);
+            return[name, role, salary, address]
+        }  
+        let emp1=(employeeDetails("Srija","Developer",90000,"kochi"));
+        console.log(emp1);
+
+        // immediate invoking function / self - calling function
+        (function(){
+            let apiKey="AIzaSyDIZx44u02sv2a5Cx5of88RDyRPFGYtC3g"
+            console.log("This is immediate invoking function");
+            return apiKey;
+        })
+        ()
+        let a=10;
+
+        // arrow function
+
+        let arrowFun=()=>console.log("Arrow Function");
+        arrowFun()
+        arrowFun()
+        arrowFun()
+
+        let test=(skills,name) =>{
+            let a=10
+            let b=20
+            console.log(a,b);
+            console.log("Name: ",name , "Skills: ", skills);
+            
+            }
+        test(["node js","express js","mongodb","react js"], "shagun")
+
+        // Nested Function
+        // function outerFun(){
+        //     function innerFun(){
+        //         console.log("Inner Function");
+        //         }
+        //         console.log("Outer Function");
+        //         innerFun()
+        //     }
+        //     outerFun()
+            
+        //  function outerFun(){
+        //     console.log("Outer Function");
+        //     return function innerFun(){
+        //         console.log(a,b);
+        //         console.log("Inner Function");
+        //     }
+        //  }
+        //  let result1=outerFun(10,20)
+        //  result1()
+        function outerFun(count){
+            console.log("Outer Function");
+            return function innerFun(){
+                return count++;
+            }
+         }
+         let result1=outerFun(1)
+         console.log(result1());
+         console.log(result1());
+         console.log(result1());
+         console.log(result1());
+
+         function homePage(){
+            console.log("Home page");
+         }
+         function loginPage(){
+            console.log("login page logic");
+            
+         }
+         function registerPage(){
+            console.log("Register Page logic");
+            
+         }
+         homePage(registerPage(),loginPage())
+
+         function display(fun1 , fun2){
+            fun1();
+            fun2();
+         }
+         display(()=>{
+            console.log("first callback function");
+            
+         } , ()=>{
+            console.log("Second Callback function");
+        })
+
+        // generator function
+
+        function* generator(){
+            yield 10;
+            yield 20;
+            yield 60;
+            console.log("This is generator function"); 
+        }
+        let nextGen=generator();
+
+           while(!nextGen.next().done){
+            console.log(nextGen.next());
+            
+           }
+        console.log(nextGen.next().value);
+        console.log(nextGen.next().value);
+        console.log(nextGen.next().value);
+        console.log(nextGen.next().value);
+        // nextGen.next()
+        
+        
+    </script>
+</body>
+</html>

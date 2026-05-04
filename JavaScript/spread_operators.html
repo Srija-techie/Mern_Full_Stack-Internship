@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let arr1=[10,20,30,40];
+        let arr2=[50,null,{name:"sri",role:"developer"},()=>{console.log("HELLO");
+        }]
+
+        // spread operator in array
+        let arr3=[...arr1, ...arr2, "html","css",true];
+        console.log(arr3);
+        
+        // array destructuring
+        let[a,b,c,d]=arr1
+        console.log(a,b,c,d);
+
+        let[e,f,g,h]=arr2
+        h()
+        
+        // spread operators in objects
+        let user={
+            name:"srija",
+            phone:456789
+        }
+        let orderDetails={
+            productName:"mobile",
+            price:50000,
+            status:"Done"
+        }
+        let orderHistory={...user,["name"]:"hello",["phone"]:974238};
+        console.log(orderHistory);
+
+        // object de-structuring
+        let courseDetails={
+            name:'MERN',
+            duration:'30days',
+            totalHrs:'180hrs'
+        }
+
+        let {name,duration,totalHrs} = courseDetails;
+        console.log(name);        
+        console.log(duration);        
+    </script>
+</body>
+</html>
