@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Weather App</title>
+    <style>
+        body{
+            font-family: Arial;
+            background: linear-gradient(to right, #4facfe, #00f2fe);
+            text-align: center;
+            padding: 50px;
+        }
+        .card{
+            background: white;
+            padding: 20px;
+            border-radius: 15px;
+            width: 300px;
+            margin: auto;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        }
+        input{
+            padding: 10px;
+            width: 70%;
+        }
+        button{
+            padding: 10px;
+            margin-top: 10px;
+            cursor: pointer;
+        }
+        h2{
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="card">
+        <h2>🌞 Weather App</h2>
+        <input type="text" id="city" placeholder="Enter city name">
+        <br>
+        <button onclick="getWeather()">Get Weather</button>
+
+        <div id="result"></div>
+    </div>
+
+<script>
+
+function getWeather(){
+    let city = document.getElementById("city").value;
+
+    let url = `https://api.weatherapi.com/v1/current.json?key=61962479962d4c0ab0a160437262102&q=${city}&aqi=no`;
+
+    fetch(url)
+    .then((res)=>res.json())
+    .then((data)=>{
+        console.log(data);
+
+        let output = `
+            <h3>${data.location.name}, ${data.location.country}</h3>
+            <p>🌡 Temp: ${data.current.temp_c} °C</p>
+            <p>☁ Condition: ${data.current.condition.text}</p>
+            <p>💧 Humidity: ${data.current.humidity}%</p>
+            <p>🌬 Wind: ${data.current.wind_kph} kph</p>
+        `;
+
+        document.getElementById("result").innerHTML = output;
+    })
+    .catch((err)=>{
+        console.log(err);
+        alert("City not found!");
+        
+    })
+}
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,88 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Home Page</title>
+    <style>
+      body {
+        font-family: "Segoe UI", sans-serif;
+        background: linear-gradient(135deg, #0f172a, #1e293b);
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0;
+      }
+
+      .home-container {
+        background: linear-gradient(135deg, #1e293b, #334155);
+        padding: 40px 50px;
+        border-radius: 20px;
+        text-align: center;
+        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6);
+        color: #e2e8f0;
+        width: 350px;
+      }
+
+      h1 {
+        margin-bottom: 20px;
+        color: #cbd5f5;
+        font-weight: 600;
+      }
+
+      p {
+        font-size: 14px;
+        color: #94a3b8;
+        margin-bottom: 25px;
+      }
+
+      button {
+        padding: 12px 20px;
+        background: linear-gradient(135deg, #6366f1, #4f46e5);
+        border: none;
+        color: white;
+        font-weight: 600;
+        border-radius: 12px;
+        cursor: pointer;
+        transition: 0.3s;
+      }
+
+      button:hover {
+        background: linear-gradient(135deg, #4f46e5, #4338ca);
+        transform: translateY(-2px);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="home-container">
+      <h1 id="welcomeMsg"></h1>
+      <p>You are successfully logged in 🎉</p>
+      <button onclick="logout()">Logout</button>
+    </div>
+
+    <script>
+      // get username from localStorage
+      let username = localStorage.getItem("username");
+
+      // display welcome message
+      if (username) {
+        document.getElementById("welcomeMsg").innerText =
+          "Welcome, " + username;
+      } else {
+        // if no user found, go back to login
+        window.location.href = "login.html";
+      }
+
+      // logout function
+      function logout() {
+        alert("Logged out successfully");
+
+        // optional: clear data (recommended)
+        localStorage.removeItem("username");
+        localStorage.removeItem("pwd");
+
+        // redirect to login page
+        window.location.href = "loginpage.html";
+      }
+    </script>
+  </body>
+</html>

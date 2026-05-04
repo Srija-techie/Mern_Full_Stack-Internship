@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Page</title>
+    <style>
+    body {
+        font-family: 'Segoe UI', sans-serif;
+        background: linear-gradient(135deg, #0f172a, #1e293b);
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0;
+    }
+
+    form {
+        background: linear-gradient(135deg, #1e293b, #334155);
+        padding: 30px 40px;
+        border-radius: 18px;
+        width: 360px;
+        box-shadow: 0 15px 40px rgba(0,0,0,0.6);
+        color: #e2e8f0;
+    }
+
+    fieldset {
+        border: none;
+    }
+
+    legend {
+        text-align: center;
+    }
+
+    h2 {
+        margin-bottom: 10px;
+        color: #cbd5f5;
+        letter-spacing: 0.5px;
+    }
+
+    label {
+        display: block;
+        margin-top: 12px;
+        font-size: 14px;
+        color: #cbd5e1;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="password"],
+    input[type="date"] {
+        width: 100%;
+        padding: 10px;
+        margin-top: 5px;
+        border-radius: 10px;
+        border: 1px solid #475569;
+        outline: none;
+        background: rgba(255,255,255,0.05);
+        color: #f1f5f9;
+        transition: 0.3s;
+    }
+
+    input::placeholder {
+        color: #94a3b8;
+    }
+
+    input:focus {
+        border-color: #818cf8;
+        box-shadow: 0 0 8px rgba(129,140,248,0.5);
+        background: rgba(255,255,255,0.08);
+    }
+
+    .gender-group {
+        margin-top: 10px;
+    }
+
+    .gender-group input {
+        margin-left: 10px;
+        margin-right: 5px;
+        accent-color: #818cf8;
+    }
+
+    button {
+        width: 100%;
+        padding: 12px;
+        margin-top: 20px;
+        background: linear-gradient(135deg, #6366f1, #4f46e5);
+        border: none;
+        color: white;
+        font-weight: 600;
+        border-radius: 12px;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+
+    button:hover {
+        background: linear-gradient(135deg, #4f46e5, #4338ca);
+        transform: translateY(-2px);
+    }
+</style>
+</head>
+<body>
+    <form id="registerForm" method="post">
+         <fieldset>
+           <legend align="center"><h2>User Registration Form</h2></legend>
+             <label for="username">Username:</label>
+             <input type="text" id="username" required placeholder="Enter your name" minlength="3" maxlength="10">
+             <br><br>
+             <label for="email">Email:</label>
+             <input type="email" id="email" required placeholder="Enter your email">
+             <br><br>
+             <label for="pwd">Password:</label>
+             <input type="password" id="pwd" required name="Password" placeholder="Enter Password" minlength="5" maxlength="7">
+             <br><br>
+             <label for="confirm">Confirm Password: </label>
+             <input type="password" id="confirm" required placeholder="Re-enter your password">
+             <br><br>
+             <label for="">Gender:</label>
+             <input type="radio" name="Male">Male
+             <input type="radio" name="Female">Female
+             <input type="radio" name="Others">Others
+             <br><br>
+             <label for="dob">Date of Birth</label>
+             <input type="date" id="dob">
+             <br><br>
+             <button type="submit">Register</button>
+            </fieldset>
+        </form>
+    <script>
+       document.getElementById("registerForm").addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    let username = document.getElementById("username").value.trim();
+    let email = document.getElementById("email").value.trim();
+    let password = document.getElementById("pwd").value.trim();
+    let confirm = document.getElementById("confirm").value.trim();
+    let dob = document.getElementById("dob").value;
+
+    // Gender check
+    let genderSelected = document.querySelector('input[type="radio"]:checked');
+
+    if (
+        username === "" ||
+        email === "" ||
+        password === "" ||
+        confirm === "" ||
+        dob === "" ||
+        !genderSelected
+    ) {
+        alert("All fields are required");
+        return;
+    }
+
+    // Password match check
+    if (password !== confirm) {
+        alert("Passwords do not match");
+        return;
+    }
+
+    // Store in localStorage
+    localStorage.setItem("username", username);
+    localStorage.setItem("pwd", password);
+
+    alert("Registration Successful");
+    window.location.href = "loginpage.html";
+});
+    </script>
+</body>
+</html>
