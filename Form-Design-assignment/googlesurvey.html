@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Google Form Clone</title>
+
+<style>
+body {
+  font-family: Arial, sans-serif;
+  background: #ede7f6;
+  margin: 0;
+  padding: 20px;
+}
+
+.container {
+  max-width: 500px;
+  margin: auto;
+}
+
+.form-card {
+  background: #fff;
+  padding: 20px;
+  margin-bottom: 15px;
+  border-radius: 10px;
+  border-top: 6px solid #673ab7;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+h1 {
+  text-align: center;
+}
+
+label {
+  font-weight: 500;
+  display: block;
+  margin-bottom: 5px;
+}
+
+input[type="text"],
+textarea,
+select {
+  width: 100%;
+  padding: 8px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+  margin-right: 6px;
+}
+
+button {
+  background: #673ab7;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 6px;
+  width: 100%;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+button:hover {
+  background: #5e35b1;
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>Survey Form</h1>
+
+<form>
+
+<div class="form-card">
+<label>Name *</label>
+<input type="text" required placeholder="Your answer">
+</div>
+
+<div class="form-card">
+<label>Email *</label>
+<input type="text" required placeholder="Your email">
+</div>
+
+<div class="form-card">
+<label>Feedback</label>
+<textarea rows="4" placeholder="Your response"></textarea>
+</div>
+
+<div class="form-card">
+<label>Rate your experience</label>
+<input type="radio" name="rating"> 1 <br>
+<input type="radio" name="rating"> 2 <br>
+<input type="radio" name="rating"> 3 <br>
+<input type="radio" name="rating"> 4 <br>
+<input type="radio" name="rating"> 5
+</div>
+
+<div class="form-card">
+<label>Favorite Technology</label>
+<select>
+<option>HTML</option>
+<option>CSS</option>
+<option>JavaScript</option>
+<option>Python</option>
+<option>Java</option>
+</select>
+</div>
+
+<div class="form-card">
+<label>Select your interests</label>
+<input type="checkbox"> Coding <br>
+<input type="checkbox"> Designing <br>
+<input type="checkbox"> Content Creation
+</div>
+
+<button type="submit">Submit</button>
+
+</form>
+
+</div>
+
+</body>
+</html>
