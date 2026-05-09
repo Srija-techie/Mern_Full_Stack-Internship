@@ -1,0 +1,23 @@
+React JS:
+---------
+  ->React JS is the small JS Library
+  
+  features:
+  ->React Js is component Based
+  ->It supports VIrtual dome
+  ->Using React JS we can build (SPA) single page of applications
+  ->React Js will follow defining alogrithm
+
+  Library:
+  ---------
+  ->Collection of Code is called Libraries
+  ->Ex: React JS , JQuery , Anime JS
+
+  Frameworks:
+  -----------
+  ->Collection of libraries is called as Frameworks
+  ->Ex: Angular JS , Next JS , Vue JS , Express JS , Electron JS
+
+  JSX:
+  ----
+  JavaScript and XML (Exxtendable markup language)

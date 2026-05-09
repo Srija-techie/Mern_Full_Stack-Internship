@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Page</title>
+    <head>
+        <body><style>
+        body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, 
+        #ff9a9e, 
+        #fad0c4, 
+        #fbc2eb, 
+        #a6c1ee, 
+        #84fab0
+    );
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
+form {
+    width: 320px;
+    margin: 80px auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 0 12px rgba(0,0,0,0.2);
+}
+
+h2 {
+    text-align: center;
+    color: #ff4d6d;
+}
+
+label {
+    display: block;
+    margin-top: 10px;
+    color: #333;
+}
+
+input {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+input:focus {
+    border-color: #6c63ff;
+    outline: none;
+}
+
+button {
+    width: 100%;
+    margin-top: 15px;
+    padding: 10px;
+    background: linear-gradient(to right, #ff4d6d, #6c63ff);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    opacity: 0.9;
+}
+</style>
+</head>
+<body>
+    <form id="registerForm" method="post">
+         <fieldset>
+           <legend align="center"><h2>User Registration Form</h2></legend>
+             <label for="username">Username:</label>
+             <input type="text" id="username" required placeholder="Enter your name" minlength="3" maxlength="10">
+             <br><br>
+             <label for="email">Email:</label>
+             <input type="email" id="email" required placeholder="Enter your email">
+             <br><br>
+             <label for="pwd">Password:</label>
+             <input type="password" id="pwd" required name="Password" placeholder="Enter Password" minlength="5" maxlength="7">
+             <br><br>
+             <label for="confirm">Confirm Password: </label>
+             <input type="password" id="confirm" required placeholder="Re-enter your password">
+             <br><br>
+             <button type="submit">Register</button>
+            </fieldset>
+        </form>
+    <script>
+       document.getElementById("registerForm").addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    let username = document.getElementById("username").value.trim();
+    let email = document.getElementById("email").value.trim();
+    let password = document.getElementById("pwd").value.trim();
+    let confirm = document.getElementById("confirm").value.trim();
+   
+
+    if (
+        username === "" ||
+        email === "" ||
+        password === "" ||
+        confirm === "" 
+    ) {
+        alert("All fields are required");
+        return;
+    }
+    if (password !== confirm) {
+        alert("Passwords do not match");
+        return;
+    }
+    localStorage.setItem("username", username);
+    localStorage.setItem("pwd", password);
+
+    alert("Registration Successful");
+    window.location.href = "question-3.html";
+});
+    </script>
+</body>
+</html>

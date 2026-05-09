@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        let body = document.querySelector("body")
+
+        let table = document.createElement("table");
+        let thead = document.createElement('thead');
+        let tr1 = document.createElement("tr");
+        let tbody = document.createElement("tbody")
+        tr1.innerHTML = `<th>Name</th>
+                       <th>RollNo</th>
+                       <th>CN</th>
+                       <th>CS</th>
+                       <th>Java</th>
+                       <th>Total Marks</th>
+                       <th>Percentage</th>
+                       `
+
+        thead.appendChild(tr1)
+        table.appendChild(thead)
+        body.appendChild(table)
+        table.appendChild(tbody)
+        table.border = 1
+        table.cellSpacing = 0
+        table.cellPadding = 10
+        
+        let studentDetails = [
+    { name: 'Ravi', rollNo: '25', marks: { CN: 90, CS: 98, Java: 90 } },
+    { name: 'Rani', rollNo: '26', marks: { CN: 60, CS: 88, Java: 88} },
+    { name: 'Suresh', rollNo: '27', marks: { CN: 75, CS: 70, Java: 68} },
+    { name: 'Anitha', rollNo: '28', marks: { CN: 85, CS: 92, Java: 89} },
+    { name: 'Kiran', rollNo: '29', marks: { CN: 55, CS: 60, Java: 58} },
+    { name: 'Priya', rollNo: '30', marks: { CN: 95, CS: 96, Java: 94} }
+];
+        studentDetails.forEach((student) => {
+            let trow = document.createElement('tr');
+            //calculating percentage 
+            let percentage = (student.marks.CN + student.marks.CS + student.marks.Java) / 300 * 100;
+            let bgColor = null;
+
+            trow.style.backgroundColor = bgColor;
+            trow.innerHTML = `
+                            <td>${student.name} </td>
+                            <td>${student.rollNo} </td>
+                            <td>${student.marks.CN} </td>
+                            <td>${student.marks.CS} </td>
+                            <td>${student.marks.Java} </td>
+                            <td>${student.marks.CN + student.marks.CS + student.marks.Java} </td>
+                            <td>${percentage} %</td>
+                            `
+            tbody.appendChild(trow)
+
+        })
+
+
+    </script>
+</body>
+
+</html>
